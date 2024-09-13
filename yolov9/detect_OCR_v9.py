@@ -97,7 +97,6 @@ def run(
                 # Rescale boxes from img_size to original image size
                 det[:, :4] = scale_boxes(im.shape[2:], det[:, :4], im0.shape).round()
 
-                # Process detections
                 for *xyxy, conf, cls in reversed(det):
                     # Filter based on the bounding box size (skip too large/small)
                     if not filter_by_size(xyxy, im0.shape):
@@ -401,5 +400,5 @@ if __name__ == "__main__":
         half=False
     )
     model = tf.keras.models.load_model('/Users/ramkumarmv/Desktop/iocl-ml/Fresh-Skew-CNN.h5')
-    print('Model Loaded Successfully')
+    print('OCR Model Loaded Successfully')
     main()
