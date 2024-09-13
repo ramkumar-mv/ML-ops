@@ -400,5 +400,5 @@ if __name__ == "__main__":
         half=False
     )
     model = tf.keras.models.load_model('/Users/ramkumarmv/Desktop/iocl-ml/Fresh-Skew-CNN.h5')
-    print('OCR Model Loaded Successfully - dev branch changes before merge')
+    print('OCR Model Loaded Successfully - dev branch changes - 1')
     main()
