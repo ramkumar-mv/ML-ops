@@ -11,16 +11,45 @@ This repository is dedicated to learning and applying **MLOps** practices for st
 - **Deployment templates**: Scripts and templates for deploying machine learning models to cloud or local environments.
 
 ## Docker commands
-
-```bash
-docker pull mvramkumar/anpr:latest
-mkdir -p ~/anpr/saved_plates ~/anpr/clean_plates
-docker run --name anpr -d \
-  -e CAMERA1='rtsp://admin:msfconsole1%24@192.168.30.25:554/onvif1' \
-  -e CAMERA2='rtsp://admin:msfconsole1%24@192.168.30.27:554/onvif1' \
-  -e DETECTION_INTERVAL=5 \
-  -v ~/anpr/saved_plates:/app/saved_plates \
-  -v ~/anpr/clean_plates:/app/clean_plates \
-  mvramkumar/anpr:latest
-docker logs anpr
-```
+ 
+## Setup and Run Instructions
+ 
+1. Create a directory for the ANPR system:
+   ```
+   mkdir ~/gemi-anpr
+   ```
+ 
+2. Pull the Docker image:
+   ```
+   docker pull mvramkumar/gemi-anpr:latest
+   ```
+ 
+3. Run the container:
+   ```
+   docker run --name gemi-anpr -d \
+     -v ~/gemi-anpr:/app/data \
+     mvramkumar/gemi-anpr:latest /app/data
+   ```
+ 
+4. Check the logs to see if it's running with dummy RTSP links:
+   ```
+   docker logs gemi-anpr
+   ```
+ 
+5. If you see a message about dummy RTSP links, edit the config file:
+   ```
+   nano ~/gemi-anpr/config.ini
+   ```
+   Update the RTSPLink1 and RTSPLink2 with your actual RTSP stream URLs.
+ 
+6. Restart the container to apply changes:
+   ```
+   docker restart gemi-anpr
+   ```
+ 
+7. Check the logs again to ensure it's running with your RTSP links:
+   ```
+   docker logs gemi-anpr
+   ```
+ 
+Your ANPR system should now be running with your specified RTSP streams. The processed plates will be saved in `~/gemi-anpr/clean_plates`.
