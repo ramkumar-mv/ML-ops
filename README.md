@@ -17,11 +17,11 @@ docker build -t gemi-anpr .
 ```
 2. Tag the image
 ```
-docker tag gemi-anpr mvramkumar/gemi-anpr:latest
+docker tag gemi-anpr username/gemi-anpr:latest
 ```
 3. Push the image into
 ```
-docker push mvramkumar/gemi-anpr:latest
+docker push username/gemi-anpr:latest
 ```
  
 ## Setup and Run Instructions
