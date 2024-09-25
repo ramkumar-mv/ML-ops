@@ -11,6 +11,18 @@ This repository is dedicated to learning and applying **MLOps** practices for st
 - **Deployment templates**: Scripts and templates for deploying machine learning models to cloud or local environments.
 
 ## Docker commands
+1. To build the docker file (move to the docker file directory , use (docker login))
+```
+docker build -t gemi-anpr .
+```
+2. Tag the image
+```
+docker tag gemi-anpr mvramkumar/gemi-anpr:latest
+```
+3. Push the image into
+```
+docker push mvramkumar/gemi-anpr:latest
+```
  
 ## Setup and Run Instructions
  
