@@ -10,6 +10,8 @@ This repository is dedicated to learning and applying **MLOps** practices for st
 - **CI/CD pipelines**: Configuration for automating the testing and deployment of models.
 - **Deployment templates**: Scripts and templates for deploying machine learning models to cloud or local environments.
 
+## Docker commands
+
 ```bash
 docker pull mvramkumar/anpr:latest
 mkdir -p ~/anpr/saved_plates ~/anpr/clean_plates
